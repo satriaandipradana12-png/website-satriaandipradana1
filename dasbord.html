@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Perkenalan Diri</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      margin-top: 40px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+    h2 {
+      margin: 10px 0;
+      font-size: 1.5rem;
+    }
+    p {
+      text-align: center;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    .info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 25px;
+      width: 100%;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .card:hover {
+      background: rgba(255, 255, 255, 0.4);
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+    button {
+      margin-top: 15px;
+      background: #fff;
+      color: #764ba2;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #764ba2;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>✨ DATA DIRI ✨</header>
+
+  <div class="container">
+    <img src="https://via.placeholder.com/120" alt="Foto Profil" class="DSC.0271.JPG">
+    <h2 id="nama">SATRIA ANDI PRADANA</h2>
+    <p id="bio">Halo! Saya seorang pelajar yang suka belajar hal baru, terutama di bidang teknologi, desain, dan percodingan.</p>
+
+    <div class="info">
+      <div class="card">
+        <h4>📍 Asal</h4>
+        <p id="asal">Bareng, Jombang</p>
+      </div>
+      <div class="card">
+        <h4>🎓 Sekolah</h4>
+        <p id="sekolah">SMK Maarif Ngoro</p>
+      </div>
+      <div class="card">
+        <h4>💡 Hobi</h4>
+        <p id="hobi">Desain, Reading, Musik</p>
+      </div>
+      <div class="card">
+        <h4>📱 Kontak</h4>
+        <p id="kontak">satriaandipradana12@gmail.com
+          085708323900
+        </p>
+      </div>
+    </div>
+     
+    <button onclick="gantiData()">Ubah Data</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    function logout() {
+      document.getElementById("dashboardPage").style.display = "none";
+      document.getElementById("loginPage").style.display = "block";
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+    }
+
+    function gantiData() {
+      const asal = prompt("Dari mana asal kamu?");
+      const sekolah = prompt("Sekolah di mana?");
+      const hobi = prompt("Apa hobimu?");
+      const kontak = prompt("Masukkan kontak/email kamu:");
+      const bio = prompt("Tuliskan sedikit tentang dirimu:");
+
+      if (asal) document.getElementById("asal").textContent = asal;
+      if (sekolah) document.getElementById("sekolah").textContent = sekolah;
+      if (hobi) document.getElementById("hobi").textContent = hobi;
+      if (kontak) document.getElementById("kontak").textContent = kontak;
+      if (bio) document.getElementById("bio").textContent = bio;
+    }
+  </script>
+</body>
+</html>
